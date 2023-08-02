@@ -4,7 +4,7 @@ import numpy as np
 
 
 def _check_nparray(array):
-    return None if isinstance(array, np.ndarray) else np.array(array)
+    return array if isinstance(array, np.ndarray) else np.array(array)
 
 
 def _sum_positive(y):
