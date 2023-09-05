@@ -2,31 +2,37 @@
 name = "my-utils"
 version = "0.1.0"
 description = "common utils for my projects"
-authors = ["Pietro Fecchio <p.fecchio@ermes.company>"]
+authors = [
+  "Pietro Fecchio <p.fecchio@ermes.company>",
+]
 readme = "README.md"
 packages = [
-  {include = "my_utils", from = "src"},
-  {include = "plot_utils", from = "src/my_utils"},
-  {include = "stats", from = "src/my_utils"},
-  ]
+  { include = "my_utils", from = "src" },
+  { include = "plot_utils", from = "src/my_utils" },
+  { include = "stats", from = "src/my_utils" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 pathlib = "^1.0.1"
-numpy = "^1.24.3"
+numpy = "^1.23.0"
 seaborn = "^0.12.2"
 matplotlib = "^3.7.1"
 pre-commit = "^3.3.0"
 
 
 [build-system]
-requires = ["poetry-core"]
+requires = [
+  "poetry-core",
+]
 build-backend = "poetry.core.masonry.api"
 
 
 [tool.black]
 line-length = 119
-target-version = ["py310"]
+target-version = [
+  "py310",
+]
 
 
 [tool.isort]
@@ -34,52 +40,66 @@ multi_line_output = 3
 line_length = 119
 include_trailing_comma = true
 py_version = 310
-skip = [".gitignore", "poetry.lock"]
-skip_glob = [".git/*"]
+skip = [
+  ".gitignore",
+  "poetry.lock",
+]
+skip_glob = [
+  ".git/*",
+]
 
 
 [tool.ruff]
 select = [
-  "E", "F", "W", # flake8
-  "B",           # flake8-bugbear
-  "I",           # isort
-  "ARG",         # flake8-unused-arguments
-  "C4",          # flake8-comprehensions
-  "EM",          # flake8-errmsg
-  "ICN",         # flake8-import-conventions
-  "ISC",         # flake8-implicit-str-concat
-  "G",           # flake8-logging-format
-  "PGH",         # pygrep-hooks
-  "PIE",         # flake8-pie
-  "PL",          # pylint
-  "PT",          # flake8-pytest-style
-  "PTH",         # flake8-use-pathlib
-  "RET",         # flake8-return
-  "RUF",         # Ruff-specific
-  "SIM",         # flake8-simplify
-  "T20",         # flake8-print
-  "UP",          # pyupgrade
-  "YTT",         # flake8-2020
-  "EXE",         # flake8-executable
-  "NPY",         # NumPy specific rules
-  "PD",          # pandas-vet
+  "E",
+  "F",
+  "W",   # flake8
+  "B",   # flake8-bugbear
+  "I",   # isort
+  "ARG", # flake8-unused-arguments
+  "C4",  # flake8-comprehensions
+  "EM",  # flake8-errmsg
+  "ICN", # flake8-import-conventions
+  "ISC", # flake8-implicit-str-concat
+  "G",   # flake8-logging-format
+  "PGH", # pygrep-hooks
+  "PIE", # flake8-pie
+  "PL",  # pylint
+  "PT",  # flake8-pytest-style
+  "PTH", # flake8-use-pathlib
+  "RET", # flake8-return
+  "RUF", # Ruff-specific
+  "SIM", # flake8-simplify
+  "T20", # flake8-print
+  "UP",  # pyupgrade
+  "YTT", # flake8-2020
+  "EXE", # flake8-executable
+  "NPY", # NumPy specific rules
+  "PD",  # pandas-vet
 ]
 extend-ignore = [
-  "PLR",    # Design related pylint codes
-  "E501",   # Line too long
-  "PT004",  # Use underscore for non-returning fixture (use usefixture instead)
+  "PLR",   # Design related pylint codes
+  "E501",  # Line too long
+  "PT004", # Use underscore for non-returning fixture (use usefixture instead)
 ]
 target-version = "py310"
-typing-modules = ["mypackage._compat.typing"]
-src = ["src"]
+typing-modules = [
+  "mypackage._compat.typing",
+]
+src = [
+  "src",
+]
 unfixable = [
   "T20",  # Removes print statements
   "F841", # Removes unused variables
 ]
-exclude = []
+exclude = [
+]
 
 [tool.ruff.flake8-unused-arguments]
 ignore-variadic-names = true
 
 [tool.ruff.isort]
-required-imports = ["from __future__ import annotations"]
+required-imports = [
+  "from __future__ import annotations",
+]
