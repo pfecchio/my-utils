@@ -118,6 +118,14 @@ def recall(y_true, y_pred):
     return true_positive_rate(y_true, y_pred)
 
 
+def sensitivity(y_true, y_pred):
+    return true_positive_rate(y_true, y_pred)
+
+
+def specificity(y_true, y_pred):
+    return true_negative_rate(y_true, y_pred)
+
+
 def fbeta_score(y_true, y_pred, beta):
     _precision, uncertainty = precision(y_true, y_pred)
     _recall, _ = recall(y_true, y_pred)
